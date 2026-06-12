@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AL-TAHIR STORES — Wholesale Dry Fruits & Kiranam, Kurnool</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --maroon:#6b4423; --maroon-dk:#40270f; --gold:#f5b400; --gold-lt:#ffd95e;
+  --cream:#fffaf0; --ink:#2b1a0e; --green:#1e7a3c; --card:#ffffff;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Poppins',sans-serif;background:var(--cream);color:var(--ink);overflow-x:hidden}
+h1,h2,h3,.brand{font-family:'Playfair Display',serif}
+
+/* ---------- HEADER ---------- */
+header{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;gap:14px;
+  padding:10px 22px;background:rgba(255,250,238,.92);backdrop-filter:blur(12px);
+  border-bottom:2px solid var(--gold);box-shadow:0 2px 18px rgba(107,68,35,.08)}
+.logo-badge{width:46px;height:46px;border-radius:50%;background:radial-gradient(circle at 30% 30%,var(--gold-lt),var(--gold) 60%,#b97e00);
+  display:grid;place-items:center;font-size:24px;box-shadow:0 4px 14px rgba(245,180,0,.5);flex-shrink:0}
+.brand{color:var(--maroon-dk);font-size:1.25rem;font-weight:800;letter-spacing:.5px;line-height:1.1}
+.brand small{display:block;font-family:'Poppins';font-size:.62rem;font-weight:400;color:#9a7b50;letter-spacing:1.5px}
+nav{margin-left:auto;display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+nav a,nav button{font-family:'Poppins';font-size:.82rem;font-weight:500;color:var(--maroon);text-decoration:none;
+  background:transparent;border:none;cursor:pointer;padding:8px 12px;border-radius:20px;transition:.25s}
+nav a:hover,nav button:hover{background:rgba(245,180,0,.22);color:var(--maroon-dk)}
+.cart-btn{position:relative;background:var(--gold)!important;color:var(--maroon-dk)!important;font-weight:700!important;
+  box-shadow:0 4px 12px rgba(245,180,0,.45)}
+.cart-btn:hover{transform:translateY(-2px)}
+.cart-count{position:absolute;top:-7px;right:-7px;background:var(--maroon);color:#fff;border:2px solid var(--gold);
+  font-size:.68rem;font-weight:700;min-width:21px;height:21px;border-radius:11px;display:grid;place-items:center;padding:0 4px}
+
+/* ---------- HERO ---------- */
+#hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;
+  background:radial-gradient(ellipse at 50% 110%,#ffe7ad 0%,#fff3d8 42%,#fffaf0 100%);overflow:hidden}
+#bg3d{position:absolute;inset:0;width:100%;height:100%}
+.hero-inner{position:relative;z-index:2;text-align:center;padding:90px 20px 40px;max-width:880px}
+.hero-inner .est{color:#b08a2e;letter-spacing:5px;font-size:.75rem;font-weight:600;text-transform:uppercase}
+.hero-inner h1{font-size:clamp(2.6rem,7vw,5rem);color:var(--maroon-dk);font-weight:800;margin:10px 0;
+  text-shadow:0 4px 18px rgba(107,68,35,.18)}
+.hero-inner h1 span{color:#cf9700}
+.hero-inner p{color:#7a6448;font-weight:400;font-size:clamp(.95rem,2vw,1.15rem);margin-bottom:26px}
+.hero-cta{display:inline-block;background:linear-gradient(135deg,var(--gold-lt),var(--gold));color:var(--maroon-dk);
+  font-weight:700;padding:14px 36px;border-radius:32px;text-decoration:none;font-size:1rem;
+  box-shadow:0 10px 30px rgba(245,180,0,.45);transition:.3s}
+.hero-cta:hover{transform:translateY(-4px) scale(1.03);box-shadow:0 16px 40px rgba(245,180,0,.6)}
+.hero-tags{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:30px}
+.hero-tags span{background:rgba(255,255,255,.72);border:1px solid #ecd9a8;color:var(--maroon);
+  font-size:.75rem;padding:7px 16px;border-radius:20px;backdrop-filter:blur(6px);box-shadow:0 4px 12px rgba(107,68,35,.08)}
+.scroll-hint{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);color:#c89000;
+  font-size:1.6rem;animation:bob 1.8s infinite;z-index:2}
+@keyframes bob{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,10px)}}
+
+/* ---------- DEALS MARQUEE ---------- */
+.deals-bar{background:linear-gradient(90deg,var(--gold),var(--gold-lt),var(--gold));overflow:hidden;white-space:nowrap;
+  padding:9px 0;border-bottom:3px solid var(--maroon)}
+.deals-track{display:inline-block;animation:marquee 22s linear infinite;font-weight:600;color:var(--maroon-dk);font-size:.88rem}
+.deals-track span{margin:0 34px}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ---------- SHOP ---------- */
+#shop{max-width:1240px;margin:0 auto;padding:56px 20px}
+.section-head{text-align:center;margin-bottom:30px}
+.section-head h2{font-size:clamp(1.8rem,4vw,2.6rem);color:var(--maroon)}
+.section-head h2 em{color:var(--gold);font-style:normal}
+.section-head p{color:#7a6a55;font-size:.92rem;margin-top:6px}
+.toolbar{display:flex;gap:12px;flex-wrap:wrap;align-items:center;justify-content:center;margin-bottom:28px}
+.search-box{flex:1;min-width:220px;max-width:380px;position:relative}
+.search-box input{width:100%;padding:12px 18px 12px 42px;border-radius:26px;border:2px solid #e8d9b8;
+  background:#fff;font-family:'Poppins';font-size:.9rem;outline:none;transition:.25s}
+.search-box input:focus{border-color:var(--gold);box-shadow:0 0 0 4px rgba(245,180,0,.18)}
+.search-box::before{content:'🔍';position:absolute;left:14px;top:50%;transform:translateY(-50%);font-size:.9rem}
+.chips{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+.chip{padding:9px 18px;border-radius:22px;border:2px solid #e8d9b8;background:#fff;cursor:pointer;
+  font-family:'Poppins';font-size:.8rem;font-weight:500;color:var(--ink);transition:.25s}
+.chip:hover{border-color:var(--gold);transform:translateY(-2px)}
+.chip.active{background:var(--maroon);color:var(--gold-lt);border-color:var(--maroon);box-shadow:0 6px 16px rgba(123,17,19,.3)}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(235px,1fr));gap:22px;perspective:1400px}
+.pcard{background:var(--card);border-radius:18px;padding:18px;position:relative;cursor:default;
+  transform-style:preserve-3d;transition:transform .18s ease-out, box-shadow .3s;
+  box-shadow:0 6px 20px rgba(43,26,14,.1);border:1px solid #f0e4c8}
+.pcard:hover{box-shadow:0 26px 50px rgba(123,17,19,.22)}
+.pcard .icon-wrap{height:96px;display:grid;place-items:center;font-size:60px;
+  transform:translateZ(46px);filter:drop-shadow(0 14px 14px rgba(43,26,14,.28));transition:.3s}
+.pcard:hover .icon-wrap{transform:translateZ(66px) scale(1.12)}
+.pcard h3{font-family:'Poppins';font-size:.98rem;font-weight:600;transform:translateZ(28px)}
+.pcard .unit{font-size:.74rem;color:#8a7a64;transform:translateZ(22px)}
+.badge{position:absolute;top:12px;left:12px;font-size:.62rem;font-weight:700;letter-spacing:.6px;
+  padding:4px 10px;border-radius:12px;transform:translateZ(40px);text-transform:uppercase}
+.badge.premium{background:linear-gradient(135deg,#3d2b09,#7a5a14);color:var(--gold-lt);border:1px solid var(--gold)}
+.badge.regular{background:#eef5ee;color:var(--green);border:1px solid #bedfbe}
+.deal-flag{position:absolute;top:12px;right:12px;background:var(--maroon);color:#fff;font-size:.64rem;font-weight:700;
+  padding:4px 9px;border-radius:12px;transform:translateZ(40px);animation:pulse 1.6s infinite}
+@keyframes pulse{0%,100%{transform:translateZ(40px) scale(1)}50%{transform:translateZ(40px) scale(1.09)}}
+.price-row{display:flex;align-items:baseline;gap:8px;margin:8px 0 12px;transform:translateZ(30px)}
+.price{font-size:1.22rem;font-weight:700;color:var(--maroon)}
+.mrp{font-size:.78rem;color:#a09078;text-decoration:line-through}
+.off{font-size:.7rem;color:var(--green);font-weight:600}
+.add-btn{width:100%;padding:11px;border:none;border-radius:13px;cursor:pointer;font-family:'Poppins';
+  font-weight:600;font-size:.85rem;background:linear-gradient(135deg,var(--gold-lt),var(--gold));
+  color:var(--maroon-dk);transition:.25s;transform:translateZ(34px);box-shadow:0 6px 14px rgba(245,180,0,.35)}
+.add-btn:hover{filter:brightness(1.06);transform:translateZ(34px) translateY(-2px)}
+.add-btn:active{transform:translateZ(34px) scale(.96)}
+.qty-ctrl{display:flex;align-items:center;justify-content:space-between;gap:8px;transform:translateZ(34px)}
+.qty-ctrl button{width:38px;height:38px;border-radius:11px;border:none;background:var(--maroon);color:var(--gold-lt);
+  font-size:1.1rem;font-weight:700;cursor:pointer;transition:.2s}
+.qty-ctrl button:hover{background:var(--maroon-dk)}
+.qty-ctrl b{font-size:1rem}
+.oos{opacity:.55}
+.oos .add-btn{background:#ccc;color:#666;box-shadow:none;cursor:not-allowed}
+.empty-msg{text-align:center;padding:60px 0;color:#8a7a64;grid-column:1/-1;font-size:1rem}
+
+/* ---------- ABOUT / FOOTER ---------- */
+#about{background:linear-gradient(135deg,var(--maroon-dk),var(--maroon));color:#ffe9b0;padding:60px 20px;margin-top:50px}
+.about-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:34px}
+.about-grid h3{color:var(--gold);margin-bottom:12px;font-size:1.2rem}
+.about-grid p,.about-grid li{font-size:.88rem;font-weight:300;line-height:1.8;list-style:none}
+.about-grid a{color:var(--gold-lt)}
+footer{background:#241507;color:#c9a96a;text-align:center;padding:16px;font-size:.75rem}
+
+/* ---------- DRAWER (CART) ---------- */
+.drawer{position:fixed;top:0;right:-440px;width:min(420px,94vw);height:100vh;background:#fff;z-index:200;
+  box-shadow:-12px 0 40px rgba(0,0,0,.25);transition:right .38s cubic-bezier(.2,.8,.25,1);display:flex;flex-direction:column}
+.drawer.open{right:0}
+.drawer-head{background:var(--maroon);color:var(--gold-lt);padding:18px 20px;display:flex;justify-content:space-between;align-items:center}
+.drawer-head h3{font-size:1.15rem}
+.x-btn{background:none;border:none;color:var(--gold-lt);font-size:1.5rem;cursor:pointer;line-height:1}
+.drawer-body{flex:1;overflow-y:auto;padding:16px 20px}
+.cart-row{display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px dashed #e8d9b8}
+.cart-row .ci{font-size:30px}
+.cart-row .meta{flex:1}
+.cart-row .meta b{font-size:.88rem;display:block}
+.cart-row .meta small{color:#8a7a64;font-size:.72rem}
+.mini-qty{display:flex;align-items:center;gap:7px}
+.mini-qty button{width:26px;height:26px;border-radius:8px;border:1px solid var(--maroon);background:#fff;
+  color:var(--maroon);cursor:pointer;font-weight:700}
+.cart-row .amt{font-weight:700;color:var(--maroon);font-size:.88rem;min-width:64px;text-align:right}
+.drawer-foot{padding:18px 20px;border-top:2px solid var(--gold);background:var(--cream)}
+.tot-line{display:flex;justify-content:space-between;font-size:.86rem;margin-bottom:6px;color:#5d4d38}
+.tot-line.grand{font-size:1.12rem;font-weight:700;color:var(--maroon);margin-top:8px}
+.go-btn{width:100%;margin-top:12px;padding:14px;border:none;border-radius:14px;cursor:pointer;font-family:'Poppins';
+  font-weight:700;font-size:.95rem;background:linear-gradient(135deg,#6b4423,#8a5a2e);color:var(--gold-lt);
+  box-shadow:0 8px 20px rgba(107,68,35,.35);transition:.25s}
+.go-btn:hover{transform:translateY(-2px)}
+.go-btn:disabled{opacity:.5;cursor:not-allowed;transform:none}
+
+/* ---------- MODALS ---------- */
+.overlay{position:fixed;inset:0;background:rgba(43,26,14,.55);backdrop-filter:blur(4px);z-index:300;
+  display:none;align-items:center;justify-content:center;padding:18px}
+.overlay.show{display:flex}
+.modal{background:#fff;border-radius:20px;width:min(560px,100%);max-height:92vh;overflow-y:auto;
+  animation:popin .3s cubic-bezier(.2,.9,.3,1.2)}
+@keyframes popin{from{transform:scale(.85) translateY(24px);opacity:0}to{transform:scale(1);opacity:1}}
+.modal-head{background:var(--maroon);color:var(--gold-lt);padding:16px 22px;border-radius:20px 20px 0 0;
+  display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:5}
+.modal-body{padding:22px}
+.fld{margin-bottom:14px}
+.fld label{display:block;font-size:.76rem;font-weight:600;color:#5d4d38;margin-bottom:5px;text-transform:uppercase;letter-spacing:.5px}
+.fld input,.fld textarea,.fld select{width:100%;padding:11px 14px;border:2px solid #e8d9b8;border-radius:12px;
+  font-family:'Poppins';font-size:.88rem;outline:none;transition:.2s;background:#fff}
+.fld input:focus,.fld textarea:focus,.fld select:focus{border-color:var(--gold)}
+.pay-opts{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:6px 0 14px}
+.pay-opt{border:2px solid #e8d9b8;border-radius:14px;padding:13px;cursor:pointer;text-align:center;transition:.2s;font-size:.85rem;font-weight:600}
+.pay-opt.sel{border-color:var(--gold);background:#fff8e0;box-shadow:0 4px 14px rgba(245,180,0,.25)}
+.note{font-size:.74rem;color:#8a7a64;line-height:1.5;margin-top:10px}
+
+/* ---------- ADMIN ---------- */
+.admin-table{width:100%;border-collapse:collapse;font-size:.78rem}
+.admin-table th{background:var(--cream);text-align:left;padding:8px;color:var(--maroon);position:sticky;top:0}
+.admin-table td{padding:6px 8px;border-bottom:1px solid #f0e4c8;vertical-align:middle}
+.admin-table input,.admin-table select{width:100%;padding:6px;border:1px solid #e8d9b8;border-radius:7px;font-size:.76rem;font-family:'Poppins'}
+.admin-table input[type=checkbox]{width:auto}
+.tiny-btn{border:none;border-radius:8px;padding:6px 10px;cursor:pointer;font-size:.72rem;font-weight:600;font-family:'Poppins'}
+.tiny-btn.del{background:#fde8e8;color:#b91c1c}
+.tiny-btn.add{background:var(--green);color:#fff}
+.admin-tabs{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap}
+.admin-tabs .chip.active{background:var(--gold);color:var(--maroon-dk);border-color:var(--gold)}
+.save-bar{position:sticky;bottom:0;background:#fff;padding:12px 0 2px;display:flex;gap:10px}
+
+/* ---------- TOAST ---------- */
+#toast{position:fixed;bottom:26px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--maroon-dk);
+  color:var(--gold-lt);padding:13px 26px;border-radius:30px;font-size:.85rem;font-weight:500;z-index:500;
+  box-shadow:0 10px 30px rgba(0,0,0,.3);transition:.35s;opacity:0;border:1px solid var(--gold)}
+#toast.show{transform:translateX(-50%) translateY(0);opacity:1}
+
+@media(max-width:640px){
+  .brand{font-size:1rem}.brand small{font-size:.55rem}
+  nav a{display:none}
+  .grid{grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:14px}
+  .pcard .icon-wrap{height:72px;font-size:46px}
+  .pay-opts{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo-badge">🥜</div>
+  <div class="brand">AL-TAHIR STORES<small>WHOLESALE DRY FRUITS &amp; KIRANAM • KURNOOL</small></div>
+  <nav>
+    <a href="#shop">Shop</a>
+    <a href="#about">Contact</a>
+    <button onclick="openAdmin()" title="Merchant login">🔑 Merchant</button>
+    <button class="cart-btn" onclick="toggleCart(true)">🛒 Cart<span class="cart-count" id="cartCount">0</span></button>
+  </nav>
+</header>
+
+<section id="hero">
+  <canvas id="bg3d"></canvas>
+  <div class="hero-inner">
+    <div class="est">SPECIALIST IN SUPPLY OF KIRANAM • ALL MARRIAGES &amp; FUNCTIONS</div>
+    <h1>AL-TAHIR <span>STORES</span></h1>
+    <p>Premium dry fruits &amp; complete kitchen kiranam — rice, dals, oils, spices and more.<br>Wholesale prices, doorstep orders on WhatsApp.</p>
+    <a href="#shop" class="hero-cta">🛍️ Shop Now</a>
+    <div class="hero-tags">
+      <span>✨ Premium &amp; Regular Grades</span><span>📦 Bulk / Function Orders</span><span>💳 UPI Payments</span><span>🚚 Local Delivery</span>
+    </div>
+  </div>
+  <div class="scroll-hint">▼</div>
+</section>
+
+<div class="deals-bar"><div class="deals-track" id="dealsTrack"></div></div>
+
+<section id="shop">
+  <div class="section-head">
+    <h2>Our <em>Collection</em></h2>
+    <p>Everyday kiranam essentials to premium gift-grade dry fruits</p>
+  </div>
+  <div class="toolbar">
+    <div class="search-box"><input id="searchInp" type="text" placeholder="Search rice, badam, oil…" oninput="renderGrid()"></div>
+    <div class="chips" id="catChips"></div>
+  </div>
+  <div class="grid" id="grid"></div>
+</section>
+
+<section id="about">
+  <div class="about-grid">
+    <div>
+      <h3>📍 Visit Us</h3>
+      <p>Shop No: 9-277, Opposite Masum Basha Dargah,<br>Lal Masjid Road, Kurnool,<br>Andhra Pradesh</p>
+    </div>
+    <div>
+      <h3>📞 Contact</h3>
+      <p>WhatsApp / Call: <a href="tel:+919885723137">+91 98857 23137</a><br>Alt: +91 89191 ·····<br>Alt: +91 96400 ·····</p>
+    </div>
+    <div>
+      <h3>🎉 Functions &amp; Marriages</h3>
+      <p>Complete kiranam supply for marriages and functions at wholesale rates. Message us your list on WhatsApp for a custom quote.</p>
+    </div>
+  </div>
+</section>
+<footer>© <span id="yr"></span> AL-TAHIR STORES, Kurnool • Wholesale Dry Fruits &amp; Kiranam</footer>
+
+<!-- CART DRAWER -->
+<div class="drawer" id="cartDrawer">
+  <div class="drawer-head"><h3>🛒 Your Cart</h3><button class="x-btn" onclick="toggleCart(false)">✕</button></div>
+  <div class="drawer-body" id="cartBody"></div>
+  <div class="drawer-foot">
+    <div class="tot-line"><span>Items</span><span id="totItems">0</span></div>
+    <div class="tot-line"><span>You save</span><span id="totSave">₹0</span></div>
+    <div class="tot-line grand"><span>Total</span><span id="totAmt">₹0</span></div>
+    <button class="go-btn" id="checkoutBtn" onclick="openCheckout()" disabled>Proceed to Checkout →</button>
+  </div>
+</div>
+
+<!-- CHECKOUT MODAL -->
+<div class="overlay" id="checkoutOv">
+  <div class="modal">
+    <div class="modal-head"><h3>📋 Checkout</h3><button class="x-btn" onclick="hide('checkoutOv')">✕</button></div>
+    <div class="modal-body">
+      <div class="fld"><label>Your Name *</label><input id="cName" placeholder="Full name"></div>
+      <div class="fld"><label>Phone *</label><input id="cPhone" placeholder="10-digit mobile" maxlength="10" inputmode="numeric"></div>
+      <div class="fld"><label>Delivery Address / Pickup note *</label><textarea id="cAddr" rows="2" placeholder="House no, street, area — or write 'Store pickup'"></textarea></div>
+      <div class="fld" id="destFld" style="display:none"><label>Send order to</label><select id="ckDest"></select></div>
+      <label style="font-size:.76rem;font-weight:600;color:#5d4d38;text-transform:uppercase;letter-spacing:.5px">Payment</label>
+      <div class="pay-opts">
+        <div class="pay-opt sel" id="payUpi" onclick="setPay('upi')">💳 UPI<br><small style="font-weight:400">GPay / PhonePe / Paytm</small></div>
+        <div class="pay-opt" id="payCod" onclick="setPay('cod')">💵 Pay on Delivery<br><small style="font-weight:400">Cash / UPI at door</small></div>
+      </div>
+      <div class="tot-line grand" style="margin-bottom:10px"><span>Order Total</span><span id="ckTotal">₹0</span></div>
+      <button class="go-btn" onclick="placeOrder()">✅ Place Order on WhatsApp</button>
+      <p class="note">Your order summary opens in WhatsApp to <b>AL-TAHIR STORES</b>. If you chose UPI, your UPI app opens with the amount pre-filled — complete payment and share the screenshot in the same chat to confirm.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ADMIN LOGIN -->
+<div class="overlay" id="adminLoginOv">
+  <div class="modal" style="width:min(380px,100%)">
+    <div class="modal-head"><h3>🔑 Merchant Login</h3><button class="x-btn" onclick="hide('adminLoginOv')">✕</button></div>
+    <div class="modal-body">
+      <div class="fld"><label>PIN</label><input id="pinInp" type="password" placeholder="Enter merchant PIN" maxlength="8"></div>
+      <button class="go-btn" onclick="tryLogin()">Unlock Admin Panel</button>
+    </div>
+  </div>
+</div>
+
+<!-- ADMIN PANEL -->
+<div class="overlay" id="adminOv">
+  <div class="modal" style="width:min(860px,100%)">
+    <div class="modal-head"><h3>⚙️ Merchant Dashboard</h3><button class="x-btn" onclick="hide('adminOv')">✕</button></div>
+    <div class="modal-body">
+      <div class="admin-tabs">
+        <button class="chip active" id="tabProducts" onclick="adminTab('products')">📦 Products &amp; Prices</button>
+        <button class="chip" id="tabSettings" onclick="adminTab('settings')">🏪 Store Settings</button>
+      </div>
+
+      <div id="adminProducts">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;flex-wrap:wrap;gap:8px">
+          <small style="color:#8a7a64">Edit prices, stock &amp; deals — then press Save.</small>
+          <button class="tiny-btn add" onclick="addProductRow()">＋ Add Item</button>
+        </div>
+        <div style="max-height:46vh;overflow:auto;border:1px solid #f0e4c8;border-radius:12px">
+          <table class="admin-table" id="adminTable">
+            <thead><tr><th>Icon</th><th>Name</th><th>Category</th><th>Tier</th><th>Unit</th><th>Price ₹</th><th>Deal %</th><th>In stock</th><th></th></tr></thead>
+            <tbody id="adminTbody"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div id="adminSettings" style="display:none">
+        <div class="fld"><label>Deals ticker text (separate offers with | )</label><textarea id="setDeals" rows="2"></textarea></div>
+        <div class="fld"><label>WhatsApp order numbers / group links (one per line, first = default)</label>
+          <textarea id="setWa" rows="3" placeholder="919885723137&#10;918919XXXXXX&#10;https://chat.whatsapp.com/XXXXXXXX"></textarea></div>
+        <div class="fld"><label>UPI ID for payments</label><input id="setUpi" placeholder="altahirstores@ybl"></div>
+        <div class="fld"><label>Merchant PIN</label><input id="setPin" maxlength="8"></div>
+      </div>
+
+      <div class="save-bar">
+        <button class="go-btn" style="margin-top:0" onclick="saveAdmin()">💾 Save Changes</button>
+        <button class="tiny-btn del" style="padding:0 16px" onclick="resetData()">Reset to defaults</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="toast"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+/* ================= DATA ================= */
+const LS_KEY='altahir_store_v1';
+const DEFAULTS={
+  pin:'1234',
+  waList:['919885723137'],
+  upi:'altahirstores@ybl',
+  deals:'🔥 Marriage & function orders — special wholesale rates! | 🥜 Premium Kashmiri Badam 10% OFF this week | 🍚 Sona Masoori 25kg bag — best price in Kurnool | 🎁 Dry fruit gift boxes available',
+  products:[
+    {id:1, icon:'🍚', name:'Sona Masoori Rice', cat:'Rice & Grains', tier:'', unit:'25 kg bag', price:1450, deal:0, stock:true},
+    {id:2, icon:'🍚', name:'HMT Premium Rice', cat:'Rice & Grains', tier:'Premium', unit:'25 kg bag', price:1700, deal:0, stock:true},
+    {id:3, icon:'🌾', name:'Basmati Rice', cat:'Rice & Grains', tier:'Premium', unit:'5 kg', price:725, deal:5, stock:true},
+    {id:4, icon:'🫓', name:'Wheat Atta (Chakki)', cat:'Rice & Grains', tier:'', unit:'10 kg', price:430, deal:0, stock:true},
+    {id:5, icon:'🌾', name:'Idli Rava', cat:'Rice & Grains', tier:'', unit:'1 kg', price:52, deal:0, stock:true},
+    {id:6, icon:'🥣', name:'Toor Dal (Kandi Pappu)', cat:'Dals & Pulses', tier:'', unit:'1 kg', price:155, deal:0, stock:true},
+    {id:7, icon:'🥣', name:'Moong Dal (Pesara Pappu)', cat:'Dals & Pulses', tier:'', unit:'1 kg', price:130, deal:0, stock:true},
+    {id:8, icon:'🥣', name:'Urad Dal (Minapa Pappu)', cat:'Dals & Pulses', tier:'', unit:'1 kg', price:140, deal:5, stock:true},
+    {id:9, icon:'🥣', name:'Chana Dal (Senaga Pappu)', cat:'Dals & Pulses', tier:'', unit:'1 kg', price:95, deal:0, stock:true},
+    {id:10,icon:'🫘', name:'Kabuli Chana', cat:'Dals & Pulses', tier:'', unit:'1 kg', price:120, deal:0, stock:true},
+    {id:11,icon:'🫘', name:'Green Moong Whole', cat:'Dals & Pulses', tier:'', unit:'1 kg', price:125, deal:0, stock:true},
+    {id:12,icon:'🛢️', name:'Sunflower Oil', cat:'Oils & Ghee', tier:'', unit:'1 L pouch', price:135, deal:0, stock:true},
+    {id:13,icon:'🛢️', name:'Groundnut Oil (Filtered)', cat:'Oils & Ghee', tier:'Premium', unit:'1 L', price:215, deal:0, stock:true},
+    {id:14,icon:'🛢️', name:'Palm Oil (Cooking)', cat:'Oils & Ghee', tier:'', unit:'1 L pouch', price:108, deal:0, stock:true},
+    {id:15,icon:'🧈', name:'Pure Cow Ghee', cat:'Oils & Ghee', tier:'Premium', unit:'1 L tin', price:640, deal:5, stock:true},
+    {id:16,icon:'🥥', name:'Coconut Oil', cat:'Oils & Ghee', tier:'', unit:'500 ml', price:120, deal:0, stock:true},
+    {id:17,icon:'🌶️', name:'Red Chilli Powder (Guntur)', cat:'Spices & Masala', tier:'', unit:'1 kg', price:320, deal:0, stock:true},
+    {id:18,icon:'🟡', name:'Turmeric Powder', cat:'Spices & Masala', tier:'', unit:'500 g', price:110, deal:0, stock:true},
+    {id:19,icon:'🟤', name:'Coriander (Dhaniya) Powder', cat:'Spices & Masala', tier:'', unit:'500 g', price:95, deal:0, stock:true},
+    {id:20,icon:'⚫', name:'Mustard, Jeera & Whole Spices Mix', cat:'Spices & Masala', tier:'', unit:'250 g', price:85, deal:0, stock:true},
+    {id:21,icon:'🍛', name:'Garam Masala', cat:'Spices & Masala', tier:'Premium', unit:'100 g', price:75, deal:0, stock:true},
+    {id:22,icon:'🧂', name:'Iodised Salt', cat:'Essentials', tier:'', unit:'1 kg', price:24, deal:0, stock:true},
+    {id:23,icon:'🍬', name:'Sugar', cat:'Essentials', tier:'', unit:'1 kg', price:46, deal:0, stock:true},
+    {id:24,icon:'🟫', name:'Jaggery (Bellam)', cat:'Essentials', tier:'', unit:'1 kg', price:65, deal:0, stock:true},
+    {id:25,icon:'🍵', name:'Tea Powder', cat:'Essentials', tier:'', unit:'500 g', price:230, deal:0, stock:true},
+    {id:26,icon:'🌰', name:'Tamarind (Chintapandu)', cat:'Essentials', tier:'', unit:'500 g', price:90, deal:0, stock:true},
+    {id:27,icon:'🥜', name:'Badam (Almonds) — Regular', cat:'Dry Fruits', tier:'Regular', unit:'500 g', price:340, deal:0, stock:true},
+    {id:28,icon:'🥜', name:'Kashmiri Badam — Premium', cat:'Dry Fruits', tier:'Premium', unit:'500 g', price:520, deal:10, stock:true},
+    {id:29,icon:'🌰', name:'Kaju (Cashew) W320', cat:'Dry Fruits', tier:'Regular', unit:'500 g', price:380, deal:0, stock:true},
+    {id:30,icon:'🌰', name:'Kaju (Cashew) W180 Jumbo', cat:'Dry Fruits', tier:'Premium', unit:'500 g', price:560, deal:0, stock:true},
+    {id:31,icon:'🟢', name:'Pista (Salted)', cat:'Dry Fruits', tier:'Regular', unit:'250 g', price:310, deal:0, stock:true},
+    {id:32,icon:'🟢', name:'Iranian Pista — Premium', cat:'Dry Fruits', tier:'Premium', unit:'250 g', price:420, deal:5, stock:true},
+    {id:33,icon:'🍇', name:'Kishmish (Raisins)', cat:'Dry Fruits', tier:'Regular', unit:'500 g', price:160, deal:0, stock:true},
+    {id:34,icon:'🍇', name:'Black Raisins — Seedless', cat:'Dry Fruits', tier:'Premium', unit:'500 g', price:240, deal:0, stock:true},
+    {id:35,icon:'🌴', name:'Dates (Khajoor)', cat:'Dry Fruits', tier:'Regular', unit:'500 g', price:180, deal:0, stock:true},
+    {id:36,icon:'🌴', name:'Ajwa / Medjool Dates', cat:'Dry Fruits', tier:'Premium', unit:'500 g', price:650, deal:0, stock:true},
+    {id:37,icon:'🧠', name:'Walnut Kernels (Akhrot)', cat:'Dry Fruits', tier:'Premium', unit:'250 g', price:380, deal:0, stock:true},
+    {id:38,icon:'🟣', name:'Anjeer (Dried Figs)', cat:'Dry Fruits', tier:'Premium', unit:'250 g', price:330, deal:0, stock:true},
+    {id:39,icon:'🍑', name:'Dried Apricots (Khubani)', cat:'Dry Fruits', tier:'Regular', unit:'250 g', price:190, deal:0, stock:true},
+    {id:40,icon:'🥝', name:'Dried Kiwi Slices', cat:'Dry Fruits', tier:'Premium', unit:'250 g', price:260, deal:0, stock:true},
+    {id:41,icon:'🎁', name:'Dry Fruit Gift Box — Assorted', cat:'Dry Fruits', tier:'Premium', unit:'1 kg box', price:1150, deal:10, stock:true},
+    {id:42,icon:'🥥', name:'Dry Coconut (Kobbari)', cat:'Dry Fruits', tier:'Regular', unit:'500 g', price:140, deal:0, stock:true}
+  ]
+};
+let DB=loadDB(), cart={}, payMode='upi', activeCat='All';
+function loadDB(){
+  try{const s=localStorage.getItem(LS_KEY); if(s){const d=JSON.parse(s); if(d&&d.products){
+    if(!d.waList) d.waList=d.wa?[d.wa]:DEFAULTS.waList.slice(); /* migrate old single-number data */
+    return d;}}}catch(e){}
+  return JSON.parse(JSON.stringify(DEFAULTS));
+}
+function saveDB(){ localStorage.setItem(LS_KEY, JSON.stringify(DB)); }
+const fmt=n=>'₹'+Number(n).toLocaleString('en-IN');
+const dealPrice=p=>p.deal>0? Math.round(p.price*(100-p.deal)/100) : p.price;
+
+/* ================= TOAST ================= */
+let toastT;
+function toast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');
+  clearTimeout(toastT);toastT=setTimeout(()=>t.classList.remove('show'),2400);}
+
+/* ================= CATALOG ================= */
+function cats(){ return ['All',...new Set(DB.products.map(p=>p.cat))]; }
+function renderChips(){
+  document.getElementById('catChips').innerHTML=cats().map(c=>
+    `<button class="chip ${c===activeCat?'active':''}" onclick="setCat('${c.replace(/'/g,"\\'")}')">${c}</button>`).join('');
+}
+function setCat(c){activeCat=c;renderChips();renderGrid();}
+function renderGrid(){
+  const q=(document.getElementById('searchInp').value||'').toLowerCase();
+  const list=DB.products.filter(p=>(activeCat==='All'||p.cat===activeCat)&&p.name.toLowerCase().includes(q));
+  const g=document.getElementById('grid');
+  if(!list.length){g.innerHTML='<div class="empty-msg">😕 No items found — try another search or category.</div>';return;}
+  g.innerHTML=list.map(p=>{
+    const dp=dealPrice(p), inCart=cart[p.id]||0;
+    return `<div class="pcard ${p.stock?'':'oos'}" data-id="${p.id}" onmousemove="tilt(event,this)" onmouseleave="untilt(this)">
+      ${p.tier?`<span class="badge ${p.tier.toLowerCase()}">${p.tier}</span>`:''}
+      ${p.deal>0?`<span class="deal-flag">${p.deal}% OFF</span>`:''}
+      <div class="icon-wrap">${p.icon}</div>
+      <h3>${p.name}</h3><div class="unit">${p.unit} • ${p.cat}</div>
+      <div class="price-row"><span class="price">${fmt(dp)}</span>
+        ${p.deal>0?`<span class="mrp">${fmt(p.price)}</span><span class="off">save ${fmt(p.price-dp)}</span>`:''}</div>
+      ${!p.stock?'<button class="add-btn" disabled>Out of Stock</button>':
+        inCart===0?`<button class="add-btn" onclick="addToCart(${p.id})">＋ Add to Cart</button>`:
+        `<div class="qty-ctrl"><button onclick="chQty(${p.id},-1)">−</button><b>${inCart} in cart</b><button onclick="chQty(${p.id},1)">＋</button></div>`}
+    </div>`;}).join('');
+}
+/* 3D tilt */
+function tilt(e,el){
+  const r=el.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
+  el.style.transform=`rotateY(${x*16}deg) rotateX(${ -y*16}deg) translateZ(6px)`;
+}
+function untilt(el){el.style.transform='rotateY(0) rotateX(0)';}
+
+/* ================= CART ================= */
+function addToCart(id){cart[id]=1;syncCart();toast('Added to cart ✔');}
+function chQty(id,d){cart[id]=(cart[id]||0)+d;if(cart[id]<=0)delete cart[id];syncCart();}
+function syncCart(){
+  renderGrid();
+  const ids=Object.keys(cart);
+  document.getElementById('cartCount').textContent=ids.reduce((s,i)=>s+cart[i],0);
+  let total=0,save=0,items=0;
+  document.getElementById('cartBody').innerHTML= ids.length===0 ?
+    '<div class="empty-msg">Your cart is empty.<br>Add some goodies! 🥜</div>' :
+    ids.map(id=>{
+      const p=DB.products.find(x=>x.id==id); if(!p)return'';
+      const dp=dealPrice(p),qty=cart[id];total+=dp*qty;save+=(p.price-dp)*qty;items+=qty;
+      return `<div class="cart-row"><div class="ci">${p.icon}</div>
+        <div class="meta"><b>${p.name}</b><small>${p.unit} • ${fmt(dp)} each</small>
+        <div class="mini-qty"><button onclick="chQty(${p.id},-1)">−</button><span>${qty}</span><button onclick="chQty(${p.id},1)">＋</button></div></div>
+        <div class="amt">${fmt(dp*qty)}</div></div>`;}).join('');
+  document.getElementById('totItems').textContent=items;
+  document.getElementById('totSave').textContent=fmt(save);
+  document.getElementById('totAmt').textContent=fmt(total);
+  document.getElementById('ckTotal').textContent=fmt(total);
+  document.getElementById('checkoutBtn').disabled=ids.length===0;
+}
+function toggleCart(open){document.getElementById('cartDrawer').classList.toggle('open',open);}
+
+/* ================= CHECKOUT ================= */
+function show(id){document.getElementById(id).classList.add('show');}
+function hide(id){document.getElementById(id).classList.remove('show');}
+function openCheckout(){toggleCart(false);renderDest();show('checkoutOv');}
+function isGroup(w){return w.includes('chat.whatsapp.com');}
+function renderDest(){
+  const sel=document.getElementById('ckDest');
+  sel.innerHTML=DB.waList.map((w,i)=>
+    `<option value="${i}">${isGroup(w)?'📢 WhatsApp Group':'💬 WhatsApp +'+w}</option>`).join('');
+  document.getElementById('destFld').style.display=DB.waList.length>1?'':'none';
+}
+function setPay(m){payMode=m;
+  document.getElementById('payUpi').classList.toggle('sel',m==='upi');
+  document.getElementById('payCod').classList.toggle('sel',m==='cod');}
+function cartTotal(){return Object.keys(cart).reduce((s,id)=>{const p=DB.products.find(x=>x.id==id);return p?s+dealPrice(p)*cart[id]:s;},0);}
+function placeOrder(){
+  const name=document.getElementById('cName').value.trim(),
+        phone=document.getElementById('cPhone').value.trim(),
+        addr=document.getElementById('cAddr').value.trim();
+  if(!name||!phone||!addr){toast('Please fill name, phone & address');return;}
+  if(!/^\d{10}$/.test(phone)){toast('Enter a valid 10-digit phone number');return;}
+  const total=cartTotal();
+  const lines=Object.keys(cart).map((id,i)=>{
+    const p=DB.products.find(x=>x.id==id);return `${i+1}. ${p.name} (${p.unit}) x ${cart[id]} = ${fmt(dealPrice(p)*cart[id])}`;});
+  const text=`🛒 *NEW ORDER — AL-TAHIR STORES*\n\n${lines.join('\n')}\n\n*Total: ${fmt(total)}*\n\n`+
+    `👤 ${name}\n📞 ${phone}\n📍 ${addr}\n💳 Payment: ${payMode==='upi'?'UPI (paying now)':'Pay on delivery'}`;
+  const di=Number(document.getElementById('ckDest').value)||0;
+  const dest=DB.waList[di]||DB.waList[0];
+  if(isGroup(dest)){
+    if(navigator.clipboard)navigator.clipboard.writeText(text).catch(()=>{});
+    window.open(dest.startsWith('http')?dest:'https://'+dest,'_blank');
+    toast('📋 Order copied — paste it in the WhatsApp group!');
+  }else{
+    window.open(`https://wa.me/${dest}?text=${encodeURIComponent(text)}`,'_blank');
+    toast(payMode==='upi'?'Order sent! Opening UPI app…':'Order sent on WhatsApp! 🎉');
+  }
+  if(payMode==='upi'){
+    const upiUrl=`upi://pay?pa=${encodeURIComponent(DB.upi)}&pn=${encodeURIComponent('AL-TAHIR STORES')}&am=${total}&cu=INR&tn=${encodeURIComponent('Order by '+name)}`;
+    setTimeout(()=>{location.href=upiUrl;},1200);
+  }
+  cart={};syncCart();hide('checkoutOv');
+}
+
+/* ================= DEALS ================= */
+function renderDeals(){
+  const items=DB.deals.split('|').map(s=>`<span>${s.trim()}</span>`).join('');
+  document.getElementById('dealsTrack').innerHTML=items+items; /* duplicate for seamless loop */
+}
+
+/* ================= ADMIN ================= */
+function openAdmin(){show('adminLoginOv');document.getElementById('pinInp').value='';setTimeout(()=>document.getElementById('pinInp').focus(),100);}
+function tryLogin(){
+  if(document.getElementById('pinInp').value===DB.pin){hide('adminLoginOv');openAdminPanel();}
+  else toast('❌ Wrong PIN');
+}
+document.addEventListener('keydown',e=>{if(e.key==='Enter'&&document.getElementById('adminLoginOv').classList.contains('show'))tryLogin();});
+function openAdminPanel(){
+  show('adminOv');adminTab('products');renderAdminTable();
+  document.getElementById('setDeals').value=DB.deals;
+  document.getElementById('setWa').value=DB.waList.join('\n');
+  document.getElementById('setUpi').value=DB.upi;
+  document.getElementById('setPin').value=DB.pin;
+}
+function adminTab(t){
+  document.getElementById('adminProducts').style.display=t==='products'?'':'none';
+  document.getElementById('adminSettings').style.display=t==='settings'?'':'none';
+  document.getElementById('tabProducts').classList.toggle('active',t==='products');
+  document.getElementById('tabSettings').classList.toggle('active',t==='settings');
+}
+function renderAdminTable(){
+  document.getElementById('adminTbody').innerHTML=DB.products.map(p=>`<tr data-id="${p.id}">
+    <td style="width:54px"><input class="a-icon" value="${p.icon}"></td>
+    <td style="min-width:150px"><input class="a-name" value="${p.name.replace(/"/g,'&quot;')}"></td>
+    <td style="min-width:110px"><input class="a-cat" value="${p.cat}"></td>
+    <td><select class="a-tier"><option value="" ${!p.tier?'selected':''}>—</option>
+      <option ${p.tier==='Regular'?'selected':''}>Regular</option><option ${p.tier==='Premium'?'selected':''}>Premium</option></select></td>
+    <td style="width:88px"><input class="a-unit" value="${p.unit}"></td>
+    <td style="width:74px"><input class="a-price" type="number" min="0" value="${p.price}"></td>
+    <td style="width:60px"><input class="a-deal" type="number" min="0" max="90" value="${p.deal}"></td>
+    <td style="text-align:center"><input class="a-stock" type="checkbox" ${p.stock?'checked':''}></td>
+    <td><button class="tiny-btn del" onclick="this.closest('tr').remove()">🗑</button></td></tr>`).join('');
+}
+function addProductRow(){
+  const tb=document.getElementById('adminTbody');
+  const tr=document.createElement('tr');tr.dataset.id='new';
+  tr.innerHTML=`<td style="width:54px"><input class="a-icon" value="🛒"></td>
+    <td><input class="a-name" placeholder="Item name"></td><td><input class="a-cat" value="Essentials"></td>
+    <td><select class="a-tier"><option value="" selected>—</option><option>Regular</option><option>Premium</option></select></td>
+    <td><input class="a-unit" value="1 kg"></td><td><input class="a-price" type="number" min="0" value="0"></td>
+    <td><input class="a-deal" type="number" min="0" max="90" value="0"></td>
+    <td style="text-align:center"><input class="a-stock" type="checkbox" checked></td>
+    <td><button class="tiny-btn del" onclick="this.closest('tr').remove()">🗑</button></td>`;
+  tb.prepend(tr);tr.querySelector('.a-name').focus();
+}
+function saveAdmin(){
+  const rows=[...document.querySelectorAll('#adminTbody tr')];
+  let nextId=Math.max(0,...DB.products.map(p=>p.id))+1;
+  const prods=[];
+  for(const tr of rows){
+    const name=tr.querySelector('.a-name').value.trim();
+    if(!name)continue;
+    prods.push({
+      id: tr.dataset.id==='new'? nextId++ : Number(tr.dataset.id),
+      icon: tr.querySelector('.a-icon').value.trim()||'🛒',
+      name, cat: tr.querySelector('.a-cat').value.trim()||'Essentials',
+      tier: tr.querySelector('.a-tier').value,
+      unit: tr.querySelector('.a-unit').value.trim()||'1 kg',
+      price: Math.max(0,Number(tr.querySelector('.a-price').value)||0),
+      deal: Math.min(90,Math.max(0,Number(tr.querySelector('.a-deal').value)||0)),
+      stock: tr.querySelector('.a-stock').checked
+    });
+  }
+  DB.products=prods;
+  DB.deals=document.getElementById('setDeals').value.trim()||DEFAULTS.deals;
+  DB.waList=document.getElementById('setWa').value.split('\n')
+    .map(s=>s.trim()).filter(Boolean)
+    .map(s=>isGroup(s)?s:s.replace(/\D/g,'')).filter(Boolean);
+  if(!DB.waList.length)DB.waList=DEFAULTS.waList.slice();
+  DB.upi=document.getElementById('setUpi').value.trim()||DEFAULTS.upi;
+  DB.pin=document.getElementById('setPin').value.trim()||DB.pin;
+  saveDB();
+  // drop cart items that no longer exist
+  Object.keys(cart).forEach(id=>{if(!DB.products.find(p=>p.id==id))delete cart[id];});
+  renderDeals();renderChips();renderGrid();syncCart();
+  toast('✅ Store updated & saved!');
+}
+function resetData(){
+  if(!confirm('Reset all products, prices and settings to defaults?'))return;
+  DB=JSON.parse(JSON.stringify(DEFAULTS));saveDB();cart={};
+  renderDeals();renderChips();renderGrid();syncCart();openAdminPanel();
+  toast('Store reset to defaults');
+}
+
+/* ================= THREE.JS 3D HERO ================= */
+(function init3D(){
+  if(typeof THREE==='undefined')return; /* offline fallback: gradient stays */
+  const canvas=document.getElementById('bg3d');
+  const renderer=new THREE.WebGLRenderer({canvas,alpha:true,antialias:true});
+  const scene=new THREE.Scene();
+  const camera=new THREE.PerspectiveCamera(60,1,0.1,100);
+  camera.position.z=14;
+  scene.fog=new THREE.FogExp2(0xfff3d8,0.028);
+
+  scene.add(new THREE.AmbientLight(0xfff2d0,0.85));
+  const key=new THREE.DirectionalLight(0xffffff,0.95);key.position.set(6,10,8);scene.add(key);
+  const rim=new THREE.PointLight(0xf5b400,0.7,60);rim.position.set(-8,-4,6);scene.add(rim);
+
+  /* --- recognizable dry fruit shapes --- */
+  const mat=(c,r)=>new THREE.MeshStandardMaterial({color:c,roughness:r==null?0.55:r,metalness:0.06});
+  function makeAlmond(){ // tan, teardrop-flat
+    const m=new THREE.Mesh(new THREE.SphereGeometry(0.5,20,16),mat(0xb5722f,0.6));
+    m.scale.set(0.72,1.18,0.5);return m;}
+  function makeCashew(){ // pale cream crescent
+    return new THREE.Mesh(new THREE.TorusGeometry(0.4,0.21,14,26,Math.PI*1.25),mat(0xefd8a6,0.5));}
+  function makeDate(){ // dark glossy oval
+    const m=new THREE.Mesh(new THREE.SphereGeometry(0.42,18,14),mat(0x55301a,0.3));
+    m.scale.set(0.6,1.3,0.6);return m;}
+  function makeWalnut(){ // wrinkled light-brown ball
+    return new THREE.Mesh(new THREE.IcosahedronGeometry(0.48,1),mat(0xa8763e,0.9));}
+  function makePista(){ // green kernel peeking from cream shell
+    const g=new THREE.Group();
+    const nut=new THREE.Mesh(new THREE.SphereGeometry(0.3,14,12),mat(0x8fae3f,0.5));nut.position.y=-0.07;
+    const shell=new THREE.Mesh(new THREE.SphereGeometry(0.42,14,12,0,Math.PI*2,0,Math.PI*0.62),mat(0xe9d4a2,0.6));
+    g.add(nut,shell);return g;}
+  function makeRaisin(){ // small dark wrinkly
+    return new THREE.Mesh(new THREE.IcosahedronGeometry(0.27,1),mat(0x4a2b35,0.95));}
+  function makeFig(){ // purple-brown round with flat top
+    const m=new THREE.Mesh(new THREE.SphereGeometry(0.4,16,12),mat(0x6e4530,0.7));
+    m.scale.set(1,0.82,1);return m;}
+  const makers=[makeAlmond,makeCashew,makeDate,makeWalnut,makePista,makeRaisin,makeFig];
+  const floaters=[];
+  for(let i=0;i<44;i++){
+    const mesh=makers[i%makers.length]();
+    mesh.position.set((Math.random()-0.5)*26,(Math.random()-0.5)*16,(Math.random()-0.5)*12-2);
+    mesh.rotation.set(Math.random()*Math.PI,Math.random()*Math.PI,Math.random()*Math.PI);
+    const s=0.8+Math.random()*1.1;mesh.scale.multiplyScalar(s);
+    mesh.userData={rx:(Math.random()-0.5)*0.011,ry:(Math.random()-0.5)*0.015,
+      fy:Math.random()*Math.PI*2,fs:0.3+Math.random()*0.7,baseY:mesh.position.y};
+    scene.add(mesh);floaters.push(mesh);
+  }
+  // golden dust
+  const pGeo=new THREE.BufferGeometry();
+  const pCount=260,pos=new Float32Array(pCount*3);
+  for(let i=0;i<pCount*3;i++)pos[i]=(Math.random()-0.5)*34;
+  pGeo.setAttribute('position',new THREE.BufferAttribute(pos,3));
+  const dust=new THREE.Points(pGeo,new THREE.PointsMaterial({color:0xc89000,size:0.06,transparent:true,opacity:0.5}));
+  scene.add(dust);
+
+  let mx=0,my=0;
+  window.addEventListener('mousemove',e=>{mx=(e.clientX/innerWidth-0.5)*2;my=(e.clientY/innerHeight-0.5)*2;});
+  window.addEventListener('touchmove',e=>{if(e.touches[0]){mx=(e.touches[0].clientX/innerWidth-0.5)*2;my=(e.touches[0].clientY/innerHeight-0.5)*2;}},{passive:true});
+
+  function resize(){
+    const hero=document.getElementById('hero');
+    const w=hero.clientWidth,h=hero.clientHeight;
+    renderer.setSize(w,h,false);renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+    camera.aspect=w/h;camera.updateProjectionMatrix();
+  }
+  resize();window.addEventListener('resize',resize);
+
+  let t=0;
+  (function loop(){
+    requestAnimationFrame(loop);t+=0.01;
+    floaters.forEach(f=>{
+      f.rotation.x+=f.userData.rx;f.rotation.y+=f.userData.ry;
+      f.position.y=f.userData.baseY+Math.sin(t*f.userData.fs+f.userData.fy)*0.8;
+    });
+    dust.rotation.y+=0.0008;
+    camera.position.x+= (mx*2.2-camera.position.x)*0.04;
+    camera.position.y+= (-my*1.4-camera.position.y)*0.04;
+    camera.lookAt(0,0,0);
+    renderer.render(scene,camera);
+  })();
+})();
+
+/* ================= BOOT ================= */
+document.getElementById('yr').textContent=new Date().getFullYear();
+renderDeals();renderChips();renderGrid();syncCart();
+</script>
+</body>
+</html>
+
